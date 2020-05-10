@@ -22,8 +22,10 @@ print(rawType) """
 def geturl(rawlink: str, date: str, dataType: str):
     r = requests.post(rawlink)
     returnDict = {}
-    returnDict[0] = {date, r.text, dataType}
-    return list(returnDict.values())
+    returnDict["date"] = date
+    returnDict["link"] = r.text
+    returnDict["type"] = dataType
+    return returnDict
 
 links = []
 with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
