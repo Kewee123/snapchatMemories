@@ -23,7 +23,10 @@ def geturl(rawlink: str, date: str, dataType: str):
     r = requests.post(rawlink)
     returnDict = {}
     returnDict["date"] = date
-    returnDict["link"] = r.text
+    if(r.status_code != 200):
+        raise RuntimeError("Invalid AWS Link. Please get a new snapchat memories.json\n")
+    else:
+        returnDict["link"] = r.text
     returnDict["type"] = dataType
     return returnDict
 
@@ -36,10 +39,10 @@ with concurrent.futures.ThreadPoolExecutor(max_workers=4) as executor:
     for future in concurrent.futures.as_completed(futures.values()):
         try:
             result = future.result()
-            links.append(result)
+            links.append(result)     
             """ print(result) """
         except Exception:
-            print(f"Exception when processing result {futures[future]}")
+            print(f"Exception when processing result, most likely failure in AWS Link, please make sure you are using the newest snapchat memories link {futures[future]}")
 
 """ print(links) """
 
