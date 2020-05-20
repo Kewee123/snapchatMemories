@@ -1,18 +1,17 @@
 # snapchatMemories
-Download all snapchat memories from your snapchat account data.
-Use Case:
-    I wanted to save all my snapchat memories without clicking month by month and downloading in the app nor clicking the download link one by one in the file that snapchat returns when you ask for your data.
+- Download all snapchat memories from your snapchat account data.
+### Use Case:
+- I wanted to save all my snapchat memories without clicking month by month and downloading in the app nor clicking the  download link one by one in the file that snapchat returns when you ask for your data.
 
 ## Requirements
-If you don't have the following programs, install it first.
--Python 3.8
--https://www.python.org/downloads/release/python-380/
+### If you don't have the following programs, install it first.
+- Python 3.8
+- https://www.python.org/downloads/release/python-380/
 
-Modules
--Requests
-`pip install requests` (python should have installed pip already)
-
-If it throws any other errors, then you would probably have to pip install it as well.
+### Modules
+- Requests
+- `pip install requests` (python should have installed pip already)
+- If it throws any other errors, then you would probably have to pip install it as well.
 
 Run in Windows for now, will make the path change for unix sometime soon.
 Also, the metadata per file isn't changed yet, so that will be added sometime later.
